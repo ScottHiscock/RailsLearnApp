@@ -1,0 +1,14 @@
+﻿[ orders.status ]
+
+může být
+sended, paid, delivered atd.. záleží na obchodní politice
+orders.total_price je decimal kvůli případné změny měny třeba na $, hodnota slouží pro případnou množstevní slevu, jinak lze počítat SUMou
+
+[ user.address_id ]
+
+adresa, která se předvyplní do objednávkového formuláře. Je to poslední použitá fakturační adresa (aktualizuje bud App nebo Trigger?)
+Pokud je prazdná, do objednávkového formuláře (který neni předvyplněn) zadá uživatel úplně novou. Pokud uživatel zadá jinou (tj. změní předvyplněnou) tak se změní i address_id na tuto novou adresu, která se musí vytvořit
+
+[ users.activated ]
+
+Uživatel může objednávat jako neregistrovaný, ale dokud nepotvrdí email (tj. ten se bude rozesílat pouze neregistrovaným uživatelům) případně nepříde platba tak je objednávka považována za neplatnou
