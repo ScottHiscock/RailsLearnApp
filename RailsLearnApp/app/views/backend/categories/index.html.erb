@@ -1,0 +1,25 @@
+<h1>Výpis kategorií</h1>
+
+<table>
+  <tr>
+    <th>Název</th>
+		<th>Nadkategorie</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%= category.name %></td>
+		<td><%= category.supercategory.name if defined? category.supercategory.name %></td>
+		<td><%= link_to 'Show', backend_category_path(category) %></td>
+    <td><%= link_to 'Edit', edit_backend_category_path(category) %></td>
+    <td><%= link_to 'Destroy', backend_category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<!-- <td><%= button_to 'Destroy', backend_category_path(category), :confirm => "are you sure?", :method => :delete %></td> -->
+
+ </tr>
+<% end %>
+</table>
+
+<%= link_to 'Nová kategorie', new_backend_category_path %>

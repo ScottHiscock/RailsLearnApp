@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  payment_addresses_id: 1
+  delivery_addresses_id: 1
+  users_id: 1
+  payment_type: MyString
+  delivery_type: MyString
+  total_price: 9.99
+  status: false
+
+two:
+  payment_addresses_id: 1
+  delivery_addresses_id: 1
+  users_id: 1
+  payment_type: MyString
+  delivery_type: MyString
+  total_price: 9.99
+  status: false

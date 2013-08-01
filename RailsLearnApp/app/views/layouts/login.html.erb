@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eshop - login</title>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id='page'>
+		
+		<div id='content'>
+		LOGIN LAYOUT
+		<% flash.each do |name, msg| %>
+			<%= content_tag :div, msg, :id => "flash_#{name}" %>
+		<% end %>		
+				
+			<%= yield %>
+		</div><!-- content -->
+		
+	</div><!-- page -->
+</body>
+</html>

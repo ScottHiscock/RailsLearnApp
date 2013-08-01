@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eshop</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+	<!-- <link rel=stylesheet href="//fonts.googleapis.com/css?family=Open+Sans:400,700"/> -->
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id='page'>
+		
+		<div id='header'>
+			Eshop
+		</div><!-- head -->
+		
+		<div id='navigation'>
+			<ul>
+				<li><a href="/">Hlavní stránka</a></li>
+				<li><a href="contact">Kontakt</a></li>
+				<li><a href="eshop">Nabídka</a></li>
+				
+				<% if session[:user_id] %>
+					<li><a href="/log_out">Odhlásit se</a></li>
+					<li><a href="/users/<%= current_user.id %>"><%= current_user.email %></a></li>
+				<% else %>
+					<li><a href="/sign_up">Registrace</a></li>
+					<li><a href="/log_in">Přihlásit se</a></li>
+				<% end %>
+			</ul>	
+		</div><!-- navigation -->
+
+	<div id="container">
+				<div id='left_panel'>
+					<%= render_navigation(:expand_all => :true) %>
+				
+			
+					
+      
+
+
+				</div><!-- left_panel -->
+				
+			<div id='content'>	
+				<% flash.each do |name, msg| %>
+					<%= content_tag :div, msg, :id => "flash_#{name}" %>
+				<% end %>			
+				
+				<%= yield %>
+			</div><!-- content -->
+			<!--<hr style='clear:both; visibility:hidden; border:0;'>-->
+			<hr class='hidden'>
+	</div>
+
+		
+		<div id='footer'>
+			2013 @ Scott Hiscock
+		</div><!-- footer -->
+		
+	</div><!-- page -->
+</body>
+</html>

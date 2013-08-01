@@ -1,0 +1,2 @@
+class EshopController < ApplicationController
+end

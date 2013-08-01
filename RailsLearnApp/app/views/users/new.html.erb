@@ -1,0 +1,122 @@
+<h1>Sign Up / Registrace</h1>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <p>
+  <%= f.label :email %><br />
+  <%= f.text_field :email %>
+  </p>
+  <p>
+  <%= f.label :password %><br />
+  <%= f.password_field :password %>
+  </p>
+  <p>
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+  <%= f.label :telephone %><br />
+  <%= f.text_field :telephone %>
+  </p>
+
+
+<div id="add_address">
+	<h2>Adresa</h2>
+	<%= f.check_box :add_address %> Vyplnit adresu
+</div>
+
+<%= f.fields_for :address do |builder| %>
+    <p>
+    <%= builder.label :name, "Jméno" %><br />
+  	<%= builder.text_field :name, :disabled => true %>
+	</p>
+	<p>
+    <%= builder.label :surname, "Příjmení" %><br />
+  	<%= builder.text_field :surname, :disabled => true %>
+	</p>
+	<p>
+    <%= builder.label :city, "Město" %><br />
+  	<%= builder.text_field :city, :disabled => true %>
+	</p>
+	<p>
+    <%= builder.label :street, "Ulice" %><br />
+  	<%= builder.text_field :street, :disabled => true %>
+	</p>
+	<p>
+    <%= builder.label :postcode, "Psč" %><br />
+  	<%= builder.text_field :postcode, :disabled => true %>
+	</p>
+<% end %>
+
+
+
+<div id="add_company">
+	<h2>Společnost</h2>
+	<%= f.check_box :add_company %> Přidat společnost
+</div>
+
+<%= f.fields_for :company do |builder| %>
+    <p>
+    <%= builder.label :name, "Jméno" %><br />
+  	<%= builder.text_field :name, :disabled => true %>
+	</p>
+	<p>
+    <%= builder.label :ico, "ičo" %><br />
+  	<%= builder.text_field :ico, :disabled => true %>
+	</p>
+	<p>
+    <%= builder.label :dic, "dič" %><br />
+  	<%= builder.text_field :dic, :disabled => true %>
+	</p>
+<% end %>  
+  
+  
+  <p class="button"><%= f.submit %></p>
+<% end %>
+
+<script type="text/javascript">
+
+	$("#user_add_address").change(function () {
+		$("#user_address_attributes_name").attr("disabled",!this.checked)
+		$("#user_address_attributes_surname").attr("disabled",!this.checked)
+		$("#user_address_attributes_city").attr("disabled",!this.checked)
+		$("#user_address_attributes_street").attr("disabled",!this.checked)
+		$("#user_address_attributes_postcode").attr("disabled",!this.checked) 
+	});
+	
+	$("#user_add_company").change(function () {
+		$("#user_company_attributes_name").attr("disabled",!this.checked)
+		$("#user_company_attributes_ico").attr("disabled",!this.checked)
+		$("#user_company_attributes_dic").attr("disabled",!this.checked)
+	});
+	
+	$(document).ready(function() {
+		/* pokud dojde k validaci (uzivatel neco zapomene) a nested form je rejectnut,
+		   tak skryt pridavaci checkbox, protoze se stejne nested form nezobrazi */
+		if (!$("#user_address_attributes_name").length){ $("#add_address").css("display", "none");  }
+		if (!$("#user_company_attributes_name").length){ $("#add_company").css("display", "none");  }
+		
+		/* pokud dojde k validaci (uzivatel neco zapomene),
+		   tak znova zaktivnit hidden value vygenerovany k checkboxu, ten si generuje rails pro sebe */
+		
+		/* Funguje to ale rails ten nested form stejne rejectne
+		if ($("#user_add_address").attr("checked")) {
+			$("input:hidden[name='user[add_address]']").each(function() { $(this).val(1); });
+		}
+		
+		if ($("#user_add_company").attr("checked")) { 
+			$("input:hidden[name='user[add_company]']").each(function() { $(this).val(1); });
+		}
+		*/
+	});
+</script>

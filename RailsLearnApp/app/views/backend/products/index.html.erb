@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Výpis zboží</h1>
+
+<table>
+  <tr>
+    <th>Název</th>
+		<th>Kategorie</th>
+		<th>Cena</th>
+		<th>Množství</th>
+		<th>Sleva</th>
+		<th>Aktivní</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.name %></td>
+		<td><%= product.category.name if defined? product.category.name %></td>
+		<td><%= product.price %></td>
+		<td><%= product.quantity %></td>
+		<td><%= product.discount %></td>
+		<td><%= product.active %></td>
+		<td><%= link_to 'Show', backend_product_path(product) %></td>
+    <td><%= link_to 'Edit', edit_backend_product_path(product) %></td>
+    <td><%= link_to 'Destroy', backend_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<!-- <td><%= button_to 'Destroy', backend_product_path(product), :confirm => "are you sure?", :method => :delete %></td> -->
+
+ </tr>
+<% end %>
+</table>
+
+<%= link_to 'Nové zboží', new_backend_product_path %>

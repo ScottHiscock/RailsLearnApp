@@ -1,0 +1,42 @@
+<%= form_for([:backend, @product], :html => {:multipart => true}) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> brání v uložení kategorie.</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %><br />
+		
+		<%= f.label :description %><br />
+    <%= f.text_field :description %><br />
+		
+		<%= f.label :price %><br />
+    <%= f.number_field :price %><br />
+		
+		<%= f.label "sleva" %><br />
+    <%= f.number_field :discount %><br />
+		
+		<%= f.label "množství" %><br />
+    <%= f.number_field :quantity %><br />
+		
+		<%= f.label :active %><br />
+    <%= f.check_box :active %><br />
+		
+		<%= f.label "kategorie" %><br />
+		<%= f.collection_select :category_id, Category.all, :id , :name, :include_blank => true %><br />
+		
+		<%= f.file_field :image %>
+	</div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

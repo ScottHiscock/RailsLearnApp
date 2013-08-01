@@ -1,0 +1,19 @@
+<h1>Informace o uživateli</h1>
+
+<h2>Obecné</h2>
+	email: <%= current_user.email %> <br/>
+	telefon: <%= if current_user.telephone then current_user.telephone end %> <br/>
+	ověřen: <%= current_user.activated %> <br/>
+	
+<h2>Adresa</h2>
+	Jméno: <%= current_user.address.name %> <br/>
+	Příjmení: <%= current_user.address.surname %> <br/>
+	Město: <%= current_user.address.city %> <br/>
+	Ulice: <%= current_user.address.street %> <br/>
+	PSČ: <%= current_user.address.postcode %> <br/>
+	Stát: <%= current_user.address.state %> <br/>
+	
+<h2>Společnost</h2>
+	Jméno: <%= current_user.company.name %> <br/>
+	ičo: <%= current_user.company.ico %> <br/>
+	dič: <%= if current_user.company.dic then current_user.company.dic end %> <br/>

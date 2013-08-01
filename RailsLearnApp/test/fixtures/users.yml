@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  addresses_id: 1
+  company_id: 1
+  email: MyString
+  password: MyString
+  telephone: 1
+  activation_key: MyString
+  activated: false
+
+two:
+  addresses_id: 1
+  company_id: 1
+  email: MyString
+  password: MyString
+  telephone: 1
+  activation_key: MyString
+  activated: false

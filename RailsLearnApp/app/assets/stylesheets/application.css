@@ -1,0 +1,86 @@
+body {
+	text-align: center;
+	font-family: Cambria, sans-serif;
+	#font-size: 87.5%;
+	#line-height: 1.5em;
+	background-color: white;
+	color: black;
+}
+
+img a {border: none}
+#navigation a, #navigation a:active, #navigation a:hover {color: white}
+a {text-decoration: none}
+
+#page {
+	width: 960px;
+	margin: auto;
+	text-align: left;
+}
+
+#header {
+	text-align:center;
+	height: 100px;
+	background-color: #87CEEB;
+	border: 1px solid black;
+}
+
+#navigation {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	height: 25px;
+	background-color: black;
+	color: white;
+	padding:5px;
+	font-size: 120%;
+}
+
+#navigation ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+#navigation ul li {
+	display: inline;
+	float: left;
+	margin-right: 3px;
+}
+
+#navigation ul li a {
+	display: block;
+	padding: 3px 5px 3px 5px;
+}
+
+#navigation ul li a:hover {
+	text-decoration: underline;
+	#background-color: red;
+}
+
+#container {
+	border: 1px solid black;
+	border-bottom:0;
+}
+#content {
+	padding:10px;
+	width: 680px;
+	min-height: 500px;
+	border-left:1px dotted black;
+	float:right;
+}
+
+#left_panel {
+	padding:10px;
+	width: 235px;
+	float: left;
+}
+
+#footer {
+	border-top: 1px solid black;
+	padding:10px;
+	clear:both;
+}
+
+hr.hidden {clear:both; visibility:hidden; border:0; height:0px; width:0px; margin:0px; padding:0px;}
+
+/* Pri validaci formulare mi to obaluje label <div .field_with_errors> tagem a vkládá se tam navíc mezera coz rozhazuje stránku */
+.field_with_errors {display: inline}

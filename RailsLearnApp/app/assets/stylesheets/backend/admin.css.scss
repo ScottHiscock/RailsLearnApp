@@ -1,0 +1,76 @@
+// Place all the styles related to the backend/admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	text-align: center;
+	font-family: Cambria, sans-serif;
+	#font-size: 87.5%;
+	#line-height: 1.5em;
+	background-color: white;
+	color: black;
+}
+
+img a {border: none}
+a, a:active, a:hover {color: white}
+a {text-decoration: none}
+#content a, #content a:active {color: blue}
+#content a:hover {text-decoration:underline}
+
+
+#page {
+	width: 960px;
+	margin: auto;
+}
+
+#header {
+	height: 100px;
+	background-color: #4169E1;
+	border: 1px solid black;
+	color: white;
+}
+
+#navigation {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	height: 25px;
+	background-color: black;
+	color: white;
+	padding:5px;
+	font-size: 120%;
+}
+
+#navigation ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+#navigation ul li {
+	display: inline;
+	float: left;
+	margin-right: 3px;
+}
+
+#navigation ul li a {
+	display: block;
+	padding: 3px 5px 3px 5px;
+	#background-color: orange;
+}
+
+#navigation ul li a:hover {
+	text-decoration: underline;
+	#background-color: red;
+}
+
+#content {
+	min-height: 500px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding: 10px;
+}
+
+#footer {
+	border-top: 1px solid black;
+	padding:10px;
+}

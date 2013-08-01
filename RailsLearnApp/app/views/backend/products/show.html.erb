@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Název:</b>
+  <%= @product.name %><br/>
+	<b>Popis:</b>
+  <%= @product.description %><br/>
+	<b>Cena:</b>
+  <%= @product.price %><br/>
+	<b>Množství:</b>
+  <%= @product.quantity %><br/>
+	<b>Sleva:</b>
+  <%= @product.discount %><br/>
+	<b>Aktivní:</b>
+  <%= @product.active %>
+	<b>Obrázek:</b><br/>
+  <%= image_tag @product.image_url.to_s %><br/>
+	<b>Thumb:</b><br/>
+  <%= image_tag @product.image_url(:thumb).to_s %><br/>
+</p>
+
+<%= link_to 'Edit', edit_backend_product_path(@product) %> |
+<%= link_to 'Back', backend_products_path %>
