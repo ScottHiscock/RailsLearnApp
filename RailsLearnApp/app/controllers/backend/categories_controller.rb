@@ -1,5 +1,11 @@
 class Backend::CategoriesController < Backend::AdminController
 	
+	layout :select_layout
+	
+	private
+	def select_layout
+	  "application" unless session[:backend]
+	end
 	
 	def index
 		@categories = Category.all
@@ -7,6 +13,7 @@ class Backend::CategoriesController < Backend::AdminController
 	
 	def show
 		@category = Category.find(params[:id])
+		@products = @category.products
 	end
 	
 	def new

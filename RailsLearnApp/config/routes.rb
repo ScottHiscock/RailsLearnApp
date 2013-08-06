@@ -6,6 +6,7 @@ Eshop::Application.routes.draw do
   root :to => 'home#index'
 	match 'contact' => 'home#contact'
 	match 'eshop' => 'eshop#index'
+	get "kategorie/:id" => "backend/categories#show"
 	
 	# Auth
 	get "sign_up" => "users#new", :as => "sign_up"

@@ -1,7 +1,7 @@
 class Backend::AdminController < ApplicationController
 
 	layout :layout
-	before_filter :authorize, :except => [:login, :show_login]
+	#before_filter :authorize, :except => [:login, :show_login]
 	
 	helper_method :current_employee	# helper zpristupnuje metodu ve View
 

@@ -5,5 +5,15 @@
   <%= @category.name %>
 </p>
 
+<div>
+  <ul>
+  	<!-- zkusit @category.products.each 
+  		kdyžtak pak zakomentovat v controlleru -->
+    <% @products.each do |p| %>
+      <li><%= p.name %></li>
+    <% end %>
+  </ul>
+</div>
+
 <%= link_to 'Edit', edit_backend_category_path(@category) %> |
 <%= link_to 'Back', backend_categories_path %>

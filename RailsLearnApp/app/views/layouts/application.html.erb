@@ -32,13 +32,12 @@
 
 	<div id="container">
 				<div id='left_panel'>
-					<%= render_navigation(:expand_all => :true) %>
-				
-			
-					
-      
-
-
+					<!-- zkusit Category.All.each -->
+					<% list_categories.each do |c| %>
+			         <ul>
+			           <li><%= link_to c.name, backend_category_path(c.id) %></li>
+			         </ul>
+			       <% end %>
 				</div><!-- left_panel -->
 				
 			<div id='content'>	

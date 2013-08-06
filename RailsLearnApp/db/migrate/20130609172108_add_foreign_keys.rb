@@ -34,7 +34,7 @@ class AddForeignKeys < ActiveRecord::Migration
 				
 			ALTER TABLE categories
         ADD CONSTRAINT fk_categories_categories
-        FOREIGN KEY (supercategory_id)
+        FOREIGN KEY (category_id)
         REFERENCES categories(id);
 				
 			ALTER TABLE users
